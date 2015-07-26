@@ -34,39 +34,24 @@ A thirty-level variable with the ID number of the subjects performing the activi
 ### Acceleration("Acc") & Velocity("Gyro") Variables
 From the 561 variables of the original data source, only variables identifying the "mean" (including "mean frequency") or "standard deviation" of an acceleration or velocity attribute were included in the tidy data set. The 79 variables are:
 
-*tBodyAcc (6 variables)
-  mean and standard deviation for X,Y,Z axxes
-*tGravityAcc (6 variables)
-  mean and standard deviation for X,Y,Z axxes
-*tBodyAccJerk (6 variables)
-  mean and standard deviation for X,Y,Z axxes
-*tBodyGyro (6 variables)
-  mean and standard deviation for X,Y,Z axxes
-*tBodyGyroJerk (6 variables)
-  mean and standard deviation for X,Y,Z axxes
-*tBodyAccMag (2 variables)
-  mean and standard deviation
-*tBodyAccJerkMag (2 variables)
-  mean and standard deviation
-*tBodyGyroMag (2 variables)
-  mean and standard deviation
-*fBodyAcc (9 variables)
-  mean, mean frequency and standard deviation for X,Y,Z axxes
-*fBodyAccJerk (9 variables)
-  mean, mean frequency and standard deviation for X,Y,Z axxes
-*fBodyGyro (9 variables)
-  mean, mean frequency and standard deviation for X,Y,Z axxes
-*fBodyAccMag (3 variables)
-  mean, mean frequency and standard deviation
-*fBodyBodyAccJerkMag (3 variables)
-  mean, mean frequency and standard deviation
-*fBodyBodyGyroMag (3 variables)
-  mean, mean frequency and standard deviation
-*fBodyBodyGyroJerkMag (3 variables)
-  mean, mean frequency and standard deviation
+* tBodyAcc (6 variables: mean and standard deviation for X,Y,Z axxes)
+* tGravityAcc (6 variables: mean and standard deviation for X,Y,Z axxes)
+* tBodyAccJerk (6 variables: mean and standard deviation for X,Y,Z axxes)
+* tBodyGyro (6 variables: mean and standard deviation for X,Y,Z axxes)
+* tBodyGyroJerk (6 variables: mean and standard deviation for X,Y,Z axxes)
+* tBodyAccMag (2 variables: mean and standard deviation)
+* tBodyAccJerkMag (2 variables: mean and standard deviation)
+* tBodyGyroMag (2 variables: mean and standard deviation)
+* fBodyAcc (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyAccJerk (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyGyro (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyAccMag (3 variables: mean, mean frequency and standard deviation)
+* fBodyBodyAccJerkMag (3 variables: mean, mean frequency and standard deviation)
+* fBodyBodyGyroMag (3 variables: mean, mean frequency and standard deviation)
+* fBodyBodyGyroJerkMag (3 variables: mean, mean frequency and standard deviation)
 
 
-## Citation Request
+### Citation Request
 
 The following citation should be added to each publication that makes use of the raw data set or any processed version of it (such as the tidy data set in this repository).
 

@@ -5,45 +5,45 @@ date: "July 26, 2015"
 output: html_document
 ---
 
-### This script assumes that the reshape package is installed and the working directory is set to the top level of the unzipped folder "UCI HAR Dataset". These steps have to be completed beforehand for the following functions to work.
+This script assumes that the reshape package is installed and the working directory is set to the top level of the unzipped folder "UCI HAR Dataset". These steps have to be completed beforehand for the following functions to work.
 
-## Load reshape package.
+### Load reshape package.
 ```{R}
 library(reshape)
 ```
 
-## Combine the measurement data in training and test to one full dataset.
+### Combine the measurement data in training and test to one full dataset.
 ```{R}
 Trainingdata<-read.table("train/X_train.txt",sep="",header=FALSE,fill=TRUE)
 Testdata<-read.table("test/X_test.txt",sep="",header=FALSE,fill=TRUE)
 Fulldata<-rbind(Trainingdata,Testdata)
 ```
 
-## Create one vector with the activity IDs in the respective row of the full dataset.
+### Create one vector with the activity IDs in the respective row of the full dataset.
 ```{R}
 TrainingActivities<-read.table("train/Y_train.txt",sep=" ",header=FALSE,fill=TRUE)
 TestActivities<-read.table("test/Y_test.txt",sep=" ",header=FALSE,fill=TRUE)
 ActivityIDs<-rbind(TrainingActivities,TestActivities)
 ```
 
-## Create one vector with the subjectIDs belonging to the respective row of the full dataset
+### Create one vector with the subjectIDs belonging to the respective row of the full dataset
 ```{R}
 TrainingSubjects<-read.table("train/subject_train.txt",sep=" ",header=FALSE,fill=TRUE)
 TestSubjects<-read.table("test/subject_test.txt",sep=" ",header=FALSE,fill=TRUE)
 SubjectIDs<-rbind(TrainingSubjects,TestSubjects)
 ```
 
-## Create a tidy data frame with just the activity and subject identifiers as columns
+### Create a tidy data frame with just the activity and subject identifiers as columns
 ```{R}
 TidyFrame<-cbind(ActivityIDs,SubjectIDs)
 ```
 
-## Look up the names corresponding to each measurement ID
+### Look up the names corresponding to each measurement ID
 ```{R}
 LabelsMeas<-read.table("features.txt",sep=" ",header=FALSE)
 ```
 
-## For each measurement ID, check whether it is a mean or std measurement. If yes, copy it to the tidy data frame and store the name of the copied measure in the "MeasureLabels" vector
+### For each measurement ID, check whether it is a mean or std measurement. If yes, copy it to the tidy data frame and store the name of the copied measure in the "MeasureLabels" vector
 ```{R}
 MeasureLabels<-vector()
 for (i in 1:561)
@@ -55,25 +55,25 @@ MeasureLabels<-append(MeasureLabels,CheckLabel)}
 }
 ```
 
-## Set the names of the data variables in the tidy frame to the measurement names looked up in the previous step
+### Set the names of the data variables in the tidy frame to the measurement names looked up in the previous step
 ```{R}
 ColumnNames<-c("ActivityID","SubjectID")
 ColumnNames<-append(ColumnNames,MeasureLabels)
 names(TidyFrame)<-ColumnNames
 ```
 
-## Melt the data frame to one tall and skinny frame
+### Melt the data frame to one tall and skinny frame
 ```{R}
 SkinnyFrame<-melt.data.frame(TidyFrame,id.vars=c("ActivityID","SubjectID"))
 ```
 
-## From the skinny frame, create a table with just the mean for each measurement, activity and subject
+### From the skinny frame, create a table with just the mean for each measurement, activity and subject
 ```{R}
 AggregateFrame<-dcast(SkinnyFrame,ActivityID + SubjectID~variable,mean)
 ```
 
 
-## Look up the name of each activity and replace the activityID with it.
+### Look up the name of each activity and replace the activityID with it.
 ```{R}
 LabelsAct<-read.table("activity_labels.txt",sep=" ",header=FALSE)
 names(LabelsAct)<-c("ActivityID","ActivityName")
@@ -81,7 +81,7 @@ FinalFrame<-merge(LabelsAct,AggregateFrame)
 FinalFrame<-FinalFrame[,2:82]
 ```
 
-## Write the tidy and aggregate data frame to a text document. This is the output submitted for evaluation.
+### Write the tidy and aggregate data frame to a text document. This is the output submitted for evaluation.
 ```{R}
 write.table(FinalFrame,file="Tidydataset.txt",row.names=FALSE)
 ```
