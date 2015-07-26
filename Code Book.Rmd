@@ -34,21 +34,23 @@ A thirty-level variable with the ID number of the subjects performing the activi
 ### Acceleration("Acc") & Velocity("Gyro") Variables
 From the 561 variables of the original data source, only variables identifying the "mean" (including "mean frequency") or "standard deviation" of an acceleration or velocity attribute were included in the tidy data set. The 79 variables are:
 
-* tBodyAcc (6 variables: mean and standard deviation for X,Y,Z axxes)
-* tGravityAcc (6 variables: mean and standard deviation for X,Y,Z axxes)
-* tBodyAccJerk (6 variables: mean and standard deviation for X,Y,Z axxes)
-* tBodyGyro (6 variables: mean and standard deviation for X,Y,Z axxes)
-* tBodyGyroJerk (6 variables: mean and standard deviation for X,Y,Z axxes)
-* tBodyAccMag (2 variables: mean and standard deviation)
-* tBodyAccJerkMag (2 variables: mean and standard deviation)
-* tBodyGyroMag (2 variables: mean and standard deviation)
-* fBodyAcc (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
-* fBodyAccJerk (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
-* fBodyGyro (9 variables: mean, mean frequency and standard deviation for X,Y,Z axxes)
-* fBodyAccMag (3 variables: mean, mean frequency and standard deviation)
-* fBodyBodyAccJerkMag (3 variables: mean, mean frequency and standard deviation)
-* fBodyBodyGyroMag (3 variables: mean, mean frequency and standard deviation)
-* fBodyBodyGyroJerkMag (3 variables: mean, mean frequency and standard deviation)
+* tBodyAcc (6 variables [time domain] on Body Acceleration: mean and standard deviation for X,Y,Z axxes)
+* tGravityAcc (6 variables [time domain] on Gravity Acceleration: mean and standard deviation for X,Y,Z axxes)
+* tBodyAccJerk (6 variables [time domain] on Body Acceleration Jerking: mean and standard deviation for X,Y,Z axxes)
+* tBodyGyro (6 variables [time domain] on Body Velocity: mean and standard deviation for X,Y,Z axxes)
+* tBodyGyroJerk (6 variables [time domain] on Body Velocity Jerking: mean and standard deviation for X,Y,Z axxes)
+* tBodyAccMag (2 variables [time domain] on Body Acceleration Magnitude: mean and standard deviation)
+* tBodyAccJerkMag (2 variables [time domain] on Body Acceleration Jerk Magnitude: mean and standard deviation)
+* tBodyGyroMag (2 variables [time domain] on Body Velocity Magnitude: mean and standard deviation)
+* fBodyAcc (9 variables [frequency domain] on Body Acceleration: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyAccJerk (9 variables [frequency domain] on Body Acceleration Jerking: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyGyro (9 variables [frequency domain] on Body Velocity: mean, mean frequency and standard deviation for X,Y,Z axxes)
+* fBodyAccMag (3 variables [frequency domain] on Body Acceleration Magnitude : mean, mean frequency and standard deviation)
+* fBodyBodyAccJerkMag (3 variables [frequency domain] on Body-to-Body Acceleration Jerk Magnitude: mean, mean frequency and standard deviation)
+* fBodyBodyGyroMag (3 variables [frequency domain] on Body-to-Body Velocity Magnitude: mean, mean frequency and standard deviation)
+* fBodyBodyGyroJerkMag (3 variables [frequency domain] on Body-to-Body Velocity Jerk Magnitude: mean, mean frequency and standard deviation)
+
+(Note that these plaintext descriptions are my own broad interpretations of the experimenters' ideas and definitions. To preserve the original taxonomy I made no changes to the original names of the Acceleration/Velocity data variables.)
 
 
 ### Citation Request
