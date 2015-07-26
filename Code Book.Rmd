@@ -19,7 +19,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ## Variable Information
 
-### Activity
+### ActivityName
 A six-level factor variable with the type of activity performed by the subject during the respective measurement.
 1. Walking
 2. Walking Upstairs
@@ -28,7 +28,7 @@ A six-level factor variable with the type of activity performed by the subject d
 5. Standing
 6. Laying
 
-### Subject
+### SubjectID
 A thirty-level variable with the ID number of the subjects performing the activity during the respective measurement. Note that beyond their unique identifiers, no metadata about the individual test subjects is known.
 
 ### Acceleration("Acc") & Velocity("Gyro") Variables
